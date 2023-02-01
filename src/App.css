@@ -6,6 +6,15 @@
   height: 40vmin;
   pointer-events: none;
 }
+.btn-container{
+  width: 500px;
+  max-width: 600px;
+
+  display: flex;
+  justify-content: space-between;
+  margin:0 auto;
+  padding: 30px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
