@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+
+import {useState, useMemo} from 'react';
 import './App.css';
 
 function App() {
+  const [num, setNum] = useState(0);
+  const [count, setCount] = useState(0);
+
+  const synnShoke = (num) => {
+    console.log('s ynn shoke dk function pl');
+    return num;
+  }
+
+  const result = useMemo(()=>synnShoke(num),[num])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <p>result - {result}</p>
+        <p>count - {count}</p>
+        <button onClick={()=>setNum(n=>n+1)}>Update Num</button>
+        <button onClick={()=>setCount(c=>c+1)}>Update Count</button>
+      </main>
     </div>
   );
 }
